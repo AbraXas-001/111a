@@ -26,7 +26,7 @@ sock.ev.on('connection.update', (update) => {
     }
 
     if (connection === 'close') {
-        const shouldReconnect = (lastDisconnect.error as Boom)?.output?.statusCode !== DisconnectReason.loggedOut;
+        const shouldReconnect = lastDisconnect?.error instanceof Boom && lastDisconnect.error.output?.statusCode !== DisconnectReason.loggedOut;
         console.log('Connection closed. Reconnecting:', shouldReconnect);
         if (shouldReconnect) {
             connectToWhatsApp();
