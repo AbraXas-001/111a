@@ -1,9 +1,10 @@
 import express from 'express';
-import { makeWASocket, useSingleFileAuthState, DisconnectReason } from 'maher-zubair-baileys';
+import { makeWASocket, useSingleFileAuthState } from 'maher-zubair-baileys';
 import { Boom } from '@hapi/boom';
 import QRCode from 'qrcode';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { connect, DisconnectReason } from "maher-zubair-baileys";
 
 const app = express();
 const port = process.env.PORT || 3000;
