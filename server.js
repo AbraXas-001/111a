@@ -1,5 +1,5 @@
 import express from 'express';
-import { makeWASocket, useSingleFileAuthState } from 'maher-zubair-baileys';
+import { makeWASocket, useSingleFileAuthState, DisconnectReason } from 'maher-zubair-baileys';
 import { Boom } from '@hapi/boom';
 import QRCode from 'qrcode';
 import path from 'path';
